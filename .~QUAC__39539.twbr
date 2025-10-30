@@ -1,0 +1,936 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20231.24.0516.1130                               -->
+<workbook original-version='18.1' source-build='2023.1.13 (20231.24.0516.1130)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Parameter 2' datatype='string' name='[Parameter 1 (copy)_1409274839764365313]' param-domain-type='list' role='measure' type='nominal' value='&quot;Name&quot;'>
+        <calculation class='tableau' formula='&quot;Name&quot;' />
+        <members>
+          <member value='&quot;*&quot;' />
+          <member value='&quot;Academic Year&quot;' />
+          <member value='&quot;Major&quot;' />
+          <member value='&quot;Name&quot;' />
+          <member value='&quot;Pledge Class&quot;' />
+          <member value='&quot;Concentration&quot;' />
+          <member value='&quot;Direct Manager&quot;' />
+        </members>
+      </column>
+      <column caption='Parameter 1' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Pledge Class&quot;'>
+        <calculation class='tableau' formula='&quot;Pledge Class&quot;' />
+        <members>
+          <member value='&quot;Academic Year&quot;' />
+          <member value='&quot;Major&quot;' />
+          <member value='&quot;Name&quot;' />
+          <member value='&quot;Pledge Class&quot;' />
+          <member value='&quot;Concentration&quot;' />
+          <member value='&quot;Direct Manager&quot;' />
+        </members>
+      </column>
+      <column caption='Metric Parameter' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Available Capacity&quot;'>
+        <calculation class='tableau' formula='&quot;Available Capacity&quot;' />
+        <members>
+          <member value='&quot;Fundraising&quot;' />
+          <member value='&quot;Philanthropy&quot;' />
+          <member value='&quot;Professionalism &quot;' />
+          <member value='&quot;Available Capacity&quot;' />
+          <member value='&quot;Utilization \%&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='Consulting Data Set' inline='true' name='federated.0t6gkkc19e3oh6129ppit08cal44' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='roster' name='textscan.1ugiwep1bqds7d14izae11cgp1ut'>
+            <connection class='textscan' directory='/Users/kbhatia/Desktop/QUAC/data' filename='roster.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1ugiwep1bqds7d14izae11cgp1ut' name='roster.csv' table='[roster#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='Name' ordinal='0' />
+            <column datatype='string' name='userid' ordinal='1' />
+            <column datatype='string' name='Direct Manager' ordinal='2' />
+            <column datatype='string' name='Pledge Class' ordinal='3' />
+            <column datatype='string' name='Major' ordinal='4' />
+            <column datatype='string' name='Concentration' ordinal='5' />
+            <column datatype='string' name='Academic Year' ordinal='6' />
+            <column datatype='string' name='Expected Grad' ordinal='7' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='textscan.1ugiwep1bqds7d14izae11cgp1ut' name='roster.csv' table='[roster#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='Name' ordinal='0' />
+              <column datatype='string' name='userid' ordinal='1' />
+              <column datatype='string' name='Direct Manager' ordinal='2' />
+              <column datatype='string' name='Pledge Class' ordinal='3' />
+              <column datatype='string' name='Major' ordinal='4' />
+              <column datatype='string' name='Concentration' ordinal='5' />
+              <column datatype='string' name='Academic Year' ordinal='6' />
+              <column datatype='string' name='Expected Grad' ordinal='7' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1ugiwep1bqds7d14izae11cgp1ut' name='work.csv' table='[work#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='userid' ordinal='0' />
+              <column datatype='real' name='Fundraising' ordinal='1' />
+              <column datatype='real' name='Philanthropy' ordinal='2' />
+              <column datatype='real' name='Professionalism' ordinal='3' />
+              <column datatype='real' name='Brotherhood' ordinal='4' />
+              <column datatype='date' name='week_end_date' ordinal='5' />
+              <column datatype='date' name='week_start_date' ordinal='6' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[Academic Year]' value='[roster.csv].[Academic Year]' />
+          <map key='[Brotherhood]' value='[work.csv].[Brotherhood]' />
+          <map key='[Concentration]' value='[roster.csv].[Concentration]' />
+          <map key='[Direct Manager]' value='[roster.csv].[Direct Manager]' />
+          <map key='[Expected Grad]' value='[roster.csv].[Expected Grad]' />
+          <map key='[Fundraising]' value='[work.csv].[Fundraising]' />
+          <map key='[Major]' value='[roster.csv].[Major]' />
+          <map key='[Name]' value='[roster.csv].[Name]' />
+          <map key='[Philanthropy]' value='[work.csv].[Philanthropy]' />
+          <map key='[Pledge Class]' value='[roster.csv].[Pledge Class]' />
+          <map key='[Professionalism]' value='[work.csv].[Professionalism]' />
+          <map key='[userid (work.csv)]' value='[work.csv].[userid]' />
+          <map key='[userid]' value='[roster.csv].[userid]' />
+          <map key='[week_end_date]' value='[work.csv].[week_end_date]' />
+          <map key='[week_start_date]' value='[work.csv].[week_start_date]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[roster.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[work.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Name]</local-name>
+            <parent-name>[roster.csv]</parent-name>
+            <remote-alias>Name</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[roster.csv_5A8367814D61439D98E50097AE653D19]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>userid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[userid]</local-name>
+            <parent-name>[roster.csv]</parent-name>
+            <remote-alias>userid</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[roster.csv_5A8367814D61439D98E50097AE653D19]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Direct Manager</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Direct Manager]</local-name>
+            <parent-name>[roster.csv]</parent-name>
+            <remote-alias>Direct Manager</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[roster.csv_5A8367814D61439D98E50097AE653D19]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pledge Class</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Pledge Class]</local-name>
+            <parent-name>[roster.csv]</parent-name>
+            <remote-alias>Pledge Class</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[roster.csv_5A8367814D61439D98E50097AE653D19]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Major</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Major]</local-name>
+            <parent-name>[roster.csv]</parent-name>
+            <remote-alias>Major</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[roster.csv_5A8367814D61439D98E50097AE653D19]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Concentration</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Concentration]</local-name>
+            <parent-name>[roster.csv]</parent-name>
+            <remote-alias>Concentration</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[roster.csv_5A8367814D61439D98E50097AE653D19]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Academic Year</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Academic Year]</local-name>
+            <parent-name>[roster.csv]</parent-name>
+            <remote-alias>Academic Year</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[roster.csv_5A8367814D61439D98E50097AE653D19]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Expected Grad</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Expected Grad]</local-name>
+            <parent-name>[roster.csv]</parent-name>
+            <remote-alias>Expected Grad</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[roster.csv_5A8367814D61439D98E50097AE653D19]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>userid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[userid (work.csv)]</local-name>
+            <parent-name>[work.csv]</parent-name>
+            <remote-alias>userid</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[work.csv_ED93937F126C45188C481E0219D41085]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fundraising</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Fundraising]</local-name>
+            <parent-name>[work.csv]</parent-name>
+            <remote-alias>Fundraising</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[work.csv_ED93937F126C45188C481E0219D41085]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Philanthropy</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Philanthropy]</local-name>
+            <parent-name>[work.csv]</parent-name>
+            <remote-alias>Philanthropy</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[work.csv_ED93937F126C45188C481E0219D41085]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Professionalism</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Professionalism]</local-name>
+            <parent-name>[work.csv]</parent-name>
+            <remote-alias>Professionalism</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[work.csv_ED93937F126C45188C481E0219D41085]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Brotherhood</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Brotherhood]</local-name>
+            <parent-name>[work.csv]</parent-name>
+            <remote-alias>Brotherhood</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[work.csv_ED93937F126C45188C481E0219D41085]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>week_end_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[week_end_date]</local-name>
+            <parent-name>[work.csv]</parent-name>
+            <remote-alias>week_end_date</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[work.csv_ED93937F126C45188C481E0219D41085]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>week_start_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[week_start_date]</local-name>
+            <parent-name>[work.csv]</parent-name>
+            <remote-alias>week_start_date</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[work.csv_ED93937F126C45188C481E0219D41085]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Param 1' datatype='string' name='[Calculation_1409274839765245955]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = &quot;Pledge Class&quot; THEN [pledge_class]&#10;ELSEIF [Parameters].[Parameter 1] = &quot;Name&quot; THEN [Name]&#10;ELSEIF [Parameters].[Parameter 1] = &quot;Major&quot; THEN [major]&#10;ELSEIF [Parameters].[Parameter 1] = &quot;Academic Year&quot; THEN [academic_year]&#10;ELSEIF [Parameters].[Parameter 1] = &quot;Direct Manager&quot; THEN [direct_manager]&#10;ELSE NULL&#10;END' />
+      </column>
+      <column caption='Total Work' datatype='real' name='[Calculation_2782309777002528768]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([philanthropy]) + SUM([fundraising]) + SUM([brotherhood]) + SUM([professionalism])' />
+      </column>
+      <column caption='Utilization' datatype='real' name='[Calculation_2782309777002799105]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_2782309777002528768]/SUM([capacity])' />
+      </column>
+      <column caption='Metric' datatype='real' name='[Calculation_4369617538734202880]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Parameters].[Parameter 3] = &quot;Professionalism&quot;&#10;THEN &#10;SUM([professionalism])&#10;ELSEIF [Parameters].[Parameter 3] = &quot;Brotherhood&quot;&#10;THEN &#10;SUM([brotherhood])&#10;ELSEIF [Parameters].[Parameter 3] = &quot;Philanthropy&quot;&#10;THEN &#10;SUM([philanthropy])&#10;ELSEIF [Parameters].[Parameter 3] = &quot;Fundraising&quot;&#10;THEN &#10;SUM([fundraising])&#10;ELSEIF [Parameters].[Parameter 3] = &quot;Available Capacity&quot;&#10;THEN &#10;SUM([Calculation_4369617538734481409])&#10;END' />
+      </column>
+      <column caption='Available Capacity' datatype='real' name='[Calculation_4369617538734481409]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[capacity] - [fundraising] - [brotherhood] - [philanthropy]' />
+      </column>
+      <column caption='Param 2' datatype='string' name='[Param 1 (copy)_1409274839765946372]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Parameters].[Parameter 1 (copy)_1409274839764365313] = &quot;Pledge Class&quot; THEN [pledge_class]&#10;ELSEIF [Parameters].[Parameter 1 (copy)_1409274839764365313] = &quot;Name&quot; THEN [Name]&#10;ELSEIF [Parameters].[Parameter 1 (copy)_1409274839764365313] = &quot;Major&quot; THEN [major]&#10;ELSEIF [Parameters].[Parameter 1 (copy)_1409274839764365313] = &quot;Academic Year&quot; THEN [academic_year]&#10;ELSEIF [Parameters].[Parameter 1 (copy)_1409274839764365313] = &quot;Direct Manager&quot; THEN [direct_manager]&#10;ELSE &quot;*&quot;&#10;END' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='roster.csv' datatype='table' name='[__tableau_internal_object_id__].[roster.csv_5A8367814D61439D98E50097AE653D19]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='work.csv' datatype='table' name='[__tableau_internal_object_id__].[work.csv_ED93937F126C45188C481E0219D41085]' role='measure' type='quantitative' />
+      <column datatype='string' name='[major]' role='dimension' type='nominal' />
+      <column caption='Userid (Work.Csv)' datatype='string' name='[userid (work.csv)]' role='dimension' type='nominal' />
+      <column caption='Userid' datatype='string' name='[userid]' role='dimension' type='nominal' />
+      <column caption='Week End Date' datatype='date' name='[week_end_date]' role='dimension' type='ordinal' />
+      <column caption='Week Start Date' datatype='date' name='[week_start_date]' role='dimension' type='ordinal' />
+      <group caption='Action (Param 1,Param 2)' hidden='true' name='[Action (Param 1,Param 2)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Calculation_1409274839765245955]' />
+          <groupfilter function='level-members' level='[Param 1 (copy)_1409274839765946372]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (major)' hidden='true' name='[Action (major)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[major]' />
+        </groupfilter>
+      </group>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='roster.csv' id='roster.csv_5A8367814D61439D98E50097AE653D19'>
+            <properties context=''>
+              <relation connection='textscan.1ugiwep1bqds7d14izae11cgp1ut' name='roster.csv' table='[roster#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='Name' ordinal='0' />
+                  <column datatype='string' name='userid' ordinal='1' />
+                  <column datatype='string' name='Direct Manager' ordinal='2' />
+                  <column datatype='string' name='Pledge Class' ordinal='3' />
+                  <column datatype='string' name='Major' ordinal='4' />
+                  <column datatype='string' name='Concentration' ordinal='5' />
+                  <column datatype='string' name='Academic Year' ordinal='6' />
+                  <column datatype='string' name='Expected Grad' ordinal='7' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='work.csv' id='work.csv_ED93937F126C45188C481E0219D41085'>
+            <properties context=''>
+              <relation connection='textscan.1ugiwep1bqds7d14izae11cgp1ut' name='work.csv' table='[work#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='userid' ordinal='0' />
+                  <column datatype='real' name='Fundraising' ordinal='1' />
+                  <column datatype='real' name='Philanthropy' ordinal='2' />
+                  <column datatype='real' name='Professionalism' ordinal='3' />
+                  <column datatype='real' name='Brotherhood' ordinal='4' />
+                  <column datatype='date' name='week_end_date' ordinal='5' />
+                  <column datatype='date' name='week_start_date' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[userid]' />
+              <expression op='[userid (work.csv)]' />
+            </expression>
+            <first-end-point object-id='roster.csv_5A8367814D61439D98E50097AE653D19' />
+            <second-end-point object-id='work.csv_ED93937F126C45188C481E0219D41085' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Filter 1 (generated)' name='[Action1_106E7B70BE5C4ACA912870CF147DDE6F]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='Linear Regression' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Details'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{ED87268B-E269-4660-BC1A-E72F9112345A}' />
+    </worksheet>
+    <worksheet name='Heat Map'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Consulting Data Set' name='federated.0t6gkkc19e3oh6129ppit08cal44' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Parameter 2' datatype='string' name='[Parameter 1 (copy)_1409274839764365313]' param-domain-type='list' role='measure' type='nominal' value='&quot;Name&quot;'>
+              <calculation class='tableau' formula='&quot;Name&quot;' />
+            </column>
+            <column caption='Parameter 1' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Pledge Class&quot;'>
+              <calculation class='tableau' formula='&quot;Pledge Class&quot;' />
+            </column>
+            <column caption='Metric Parameter' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Available Capacity&quot;'>
+              <calculation class='tableau' formula='&quot;Available Capacity&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0t6gkkc19e3oh6129ppit08cal44'>
+            <column caption='Param 1' datatype='string' name='[Calculation_1409274839765245955]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = &quot;Pledge Class&quot; THEN [pledge_class]&#10;ELSEIF [Parameters].[Parameter 1] = &quot;Name&quot; THEN [Name]&#10;ELSEIF [Parameters].[Parameter 1] = &quot;Major&quot; THEN [major]&#10;ELSEIF [Parameters].[Parameter 1] = &quot;Academic Year&quot; THEN [academic_year]&#10;ELSEIF [Parameters].[Parameter 1] = &quot;Direct Manager&quot; THEN [direct_manager]&#10;ELSE NULL&#10;END' />
+            </column>
+            <column caption='Total Work' datatype='real' name='[Calculation_2782309777002528768]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([philanthropy]) + SUM([fundraising]) + SUM([brotherhood]) + SUM([professionalism])' />
+            </column>
+            <column caption='Utilization' datatype='real' name='[Calculation_2782309777002799105]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_2782309777002528768]/SUM([capacity])' />
+            </column>
+            <column caption='Metric' datatype='real' name='[Calculation_4369617538734202880]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[Parameter 3] = &quot;Professionalism&quot;&#10;THEN &#10;SUM([professionalism])&#10;ELSEIF [Parameters].[Parameter 3] = &quot;Brotherhood&quot;&#10;THEN &#10;SUM([brotherhood])&#10;ELSEIF [Parameters].[Parameter 3] = &quot;Philanthropy&quot;&#10;THEN &#10;SUM([philanthropy])&#10;ELSEIF [Parameters].[Parameter 3] = &quot;Fundraising&quot;&#10;THEN &#10;SUM([fundraising])&#10;ELSEIF [Parameters].[Parameter 3] = &quot;Available Capacity&quot;&#10;THEN &#10;SUM([Calculation_4369617538734481409])&#10;END' />
+            </column>
+            <column caption='Available Capacity' datatype='real' name='[Calculation_4369617538734481409]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[capacity] - [fundraising] - [brotherhood] - [philanthropy]' />
+            </column>
+            <column datatype='string' name='[Name]' role='dimension' type='nominal' />
+            <column caption='Param 2' datatype='string' name='[Param 1 (copy)_1409274839765946372]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Parameters].[Parameter 1 (copy)_1409274839764365313] = &quot;Pledge Class&quot; THEN [pledge_class]&#10;ELSEIF [Parameters].[Parameter 1 (copy)_1409274839764365313] = &quot;Name&quot; THEN [Name]&#10;ELSEIF [Parameters].[Parameter 1 (copy)_1409274839764365313] = &quot;Major&quot; THEN [major]&#10;ELSEIF [Parameters].[Parameter 1 (copy)_1409274839764365313] = &quot;Academic Year&quot; THEN [academic_year]&#10;ELSEIF [Parameters].[Parameter 1 (copy)_1409274839764365313] = &quot;Direct Manager&quot; THEN [direct_manager]&#10;ELSE &quot;*&quot;&#10;END' />
+            </column>
+            <column datatype='string' name='[academic_year]' role='dimension' type='nominal' />
+            <column datatype='real' name='[brotherhood]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[capacity]' role='measure' type='quantitative' />
+            <column datatype='string' name='[direct_manager]' role='dimension' type='nominal' />
+            <column datatype='real' name='[fundraising]' role='measure' type='quantitative' />
+            <column datatype='string' name='[major]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1409274839765245955]' derivation='None' name='[none:Calculation_1409274839765245955:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Param 1 (copy)_1409274839765946372]' derivation='None' name='[none:Param 1 (copy)_1409274839765946372:nk]' pivot='key' type='nominal' />
+            <column-instance column='[academic_year]' derivation='None' name='[none:academic_year:nk]' pivot='key' type='nominal' />
+            <column-instance column='[direct_manager]' derivation='None' name='[none:direct_manager:nk]' pivot='key' type='nominal' />
+            <column-instance column='[major]' derivation='None' name='[none:major:nk]' pivot='key' type='nominal' />
+            <column-instance column='[pledge_class]' derivation='None' name='[none:pledge_class:nk]' pivot='key' type='nominal' />
+            <column-instance column='[week_start_date]' derivation='None' name='[none:week_start_date:ok]' pivot='key' type='ordinal' />
+            <column datatype='real' name='[philanthropy]' role='measure' type='quantitative' />
+            <column datatype='string' name='[pledge_class]' role='dimension' type='nominal' />
+            <column datatype='real' name='[professionalism]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_2782309777002799105]' derivation='User' name='[usr:Calculation_2782309777002799105:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_4369617538734202880]' derivation='User' name='[usr:Calculation_4369617538734202880:qk]' pivot='key' type='quantitative' />
+            <column caption='Week Start Date' datatype='date' name='[week_start_date]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0t6gkkc19e3oh6129ppit08cal44].[Action (major)]'>
+            <groupfilter function='level-members' level='[major]' user:ui-action-filter='[Action1_106E7B70BE5C4ACA912870CF147DDE6F]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0t6gkkc19e3oh6129ppit08cal44].[none:academic_year:nk]'>
+            <groupfilter function='level-members' level='[none:academic_year:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0t6gkkc19e3oh6129ppit08cal44].[none:direct_manager:nk]'>
+            <groupfilter function='level-members' level='[none:direct_manager:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0t6gkkc19e3oh6129ppit08cal44].[none:major:nk]'>
+            <groupfilter function='level-members' level='[none:major:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0t6gkkc19e3oh6129ppit08cal44].[none:pledge_class:nk]'>
+            <groupfilter function='level-members' level='[none:pledge_class:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0t6gkkc19e3oh6129ppit08cal44].[none:academic_year:nk]</column>
+            <column>[federated.0t6gkkc19e3oh6129ppit08cal44].[none:direct_manager:nk]</column>
+            <column>[federated.0t6gkkc19e3oh6129ppit08cal44].[none:major:nk]</column>
+            <column>[federated.0t6gkkc19e3oh6129ppit08cal44].[none:pledge_class:nk]</column>
+            <column>[federated.0t6gkkc19e3oh6129ppit08cal44].[Action (major)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0t6gkkc19e3oh6129ppit08cal44].[none:Param 1 (copy)_1409274839765946372:nk]' value='19' />
+            <format attr='width' field='[federated.0t6gkkc19e3oh6129ppit08cal44].[none:week_start_date:ok]' value='87' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0t6gkkc19e3oh6129ppit08cal44].[none:Param 1 (copy)_1409274839765946372:nk]' value='196' />
+            <format attr='width' field='[federated.0t6gkkc19e3oh6129ppit08cal44].[none:Calculation_1409274839765245955:nk]' value='228' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' center='0.5' field='[federated.0t6gkkc19e3oh6129ppit08cal44].[usr:Calculation_2782309777002799105:qk]' max='1.2017500000000001' min='0.016500000000000001' num-steps='5' palette='red_green_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='title' field='[federated.0t6gkkc19e3oh6129ppit08cal44].[none:academic_year:nk]' value='Academic Year'>
+              <formatted-text>
+                <run>Academic Year</run>
+              </formatted-text>
+            </format>
+            <format attr='title' field='[federated.0t6gkkc19e3oh6129ppit08cal44].[none:direct_manager:nk]' value='Direct Manager'>
+              <formatted-text>
+                <run>Direct Manager</run>
+              </formatted-text>
+            </format>
+            <format attr='title' field='[federated.0t6gkkc19e3oh6129ppit08cal44].[none:major:nk]' value='Major'>
+              <formatted-text>
+                <run>Major</run>
+              </formatted-text>
+            </format>
+            <format attr='title' field='[federated.0t6gkkc19e3oh6129ppit08cal44].[none:pledge_class:nk]' value='Pledge Class'>
+              <formatted-text>
+                <run>Pledge Class</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0t6gkkc19e3oh6129ppit08cal44].[usr:Calculation_2782309777002799105:qk]' />
+              <text column='[federated.0t6gkkc19e3oh6129ppit08cal44].[usr:Calculation_4369617538734202880:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>&lt;[Parameters].[Parameter 1]&gt;:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0t6gkkc19e3oh6129ppit08cal44].[none:Calculation_1409274839765245955:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'><![CDATA[<[Parameters].[Parameter 1 (copy)_1409274839764365313]>:	]]></run>
+                <run bold='true'><![CDATA[<[federated.0t6gkkc19e3oh6129ppit08cal44].[none:Param 1 (copy)_1409274839765946372:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>&lt;[Parameters].[Parameter 3]&gt;: </run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>week_start_date:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0t6gkkc19e3oh6129ppit08cal44].[none:week_start_date:ok]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='14.547999382019043' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0t6gkkc19e3oh6129ppit08cal44].[none:Calculation_1409274839765245955:nk] / [federated.0t6gkkc19e3oh6129ppit08cal44].[none:Param 1 (copy)_1409274839765946372:nk])</rows>
+        <cols>[federated.0t6gkkc19e3oh6129ppit08cal44].[none:week_start_date:ok]</cols>
+      </table>
+      <simple-id uuid='{B540879B-3394-46EE-BB65-8F6584148C41}' />
+    </worksheet>
+    <worksheet name='Linear Regression'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{232994AE-7822-48AD-99BC-71E6D53B91C2}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='1000' maxwidth='1400' minheight='1000' minwidth='1400' sizing-mode='fixed' />
+      <datasources>
+        <datasource name='Parameters' />
+        <datasource caption='Consulting Data Set' name='federated.0t6gkkc19e3oh6129ppit08cal44' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Parameter 2' datatype='string' name='[Parameter 1 (copy)_1409274839764365313]' param-domain-type='list' role='measure' type='nominal' value='&quot;Name&quot;'>
+          <calculation class='tableau' formula='&quot;Name&quot;' />
+          <members>
+            <member value='&quot;*&quot;' />
+            <member value='&quot;Academic Year&quot;' />
+            <member value='&quot;Major&quot;' />
+            <member value='&quot;Name&quot;' />
+            <member value='&quot;Pledge Class&quot;' />
+            <member value='&quot;Concentration&quot;' />
+            <member value='&quot;Direct Manager&quot;' />
+          </members>
+        </column>
+        <column caption='Parameter 1' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Pledge Class&quot;'>
+          <calculation class='tableau' formula='&quot;Pledge Class&quot;' />
+          <members>
+            <member value='&quot;Academic Year&quot;' />
+            <member value='&quot;Major&quot;' />
+            <member value='&quot;Name&quot;' />
+            <member value='&quot;Pledge Class&quot;' />
+            <member value='&quot;Concentration&quot;' />
+            <member value='&quot;Direct Manager&quot;' />
+          </members>
+        </column>
+        <column caption='Metric Parameter' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Available Capacity&quot;'>
+          <calculation class='tableau' formula='&quot;Available Capacity&quot;' />
+          <members>
+            <member value='&quot;Fundraising&quot;' />
+            <member value='&quot;Philanthropy&quot;' />
+            <member value='&quot;Professionalism &quot;' />
+            <member value='&quot;Available Capacity&quot;' />
+            <member value='&quot;Utilization \%&quot;' />
+          </members>
+        </column>
+      </datasource-dependencies>
+      <datasource-dependencies datasource='federated.0t6gkkc19e3oh6129ppit08cal44'>
+        <column datatype='string' name='[academic_year]' role='dimension' type='nominal' />
+        <column datatype='string' name='[direct_manager]' role='dimension' type='nominal' />
+        <column datatype='string' name='[major]' role='dimension' type='nominal' />
+        <column-instance column='[academic_year]' derivation='None' name='[none:academic_year:nk]' pivot='key' type='nominal' />
+        <column-instance column='[direct_manager]' derivation='None' name='[none:direct_manager:nk]' pivot='key' type='nominal' />
+        <column-instance column='[major]' derivation='None' name='[none:major:nk]' pivot='key' type='nominal' />
+        <column-instance column='[pledge_class]' derivation='None' name='[none:pledge_class:nk]' pivot='key' type='nominal' />
+        <column datatype='string' name='[pledge_class]' role='dimension' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98400' id='7' param='horz' type-v2='layout-flow' w='98858' x='571' y='800'>
+            <zone h='98400' id='5' type-v2='layout-basic' w='87429' x='571' y='800'>
+              <zone h='41700' id='11' name='Heat Map' show-title='false' w='87429' x='571' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49200' id='16' name='Linear Regression' w='87429' x='571' y='800'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='7500' id='12' name='Heat Map' pane-specification-id='0' param='[federated.0t6gkkc19e3oh6129ppit08cal44].[usr:Calculation_2782309777002799105:qk]' type-v2='color' w='87429' x='571' y='91700'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='98400' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='11429' x='88000' y='800'>
+              <zone h='5200' id='18' mode='checkdropdown' name='Heat Map' param='[federated.0t6gkkc19e3oh6129ppit08cal44].[none:academic_year:nk]' show-apply='true' type-v2='filter' values='database' w='11429' x='88000' y='800'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='5200' id='19' mode='checkdropdown' name='Heat Map' param='[federated.0t6gkkc19e3oh6129ppit08cal44].[none:direct_manager:nk]' show-apply='true' type-v2='filter' values='database' w='11429' x='88000' y='6000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='5200' id='20' mode='checkdropdown' name='Heat Map' param='[federated.0t6gkkc19e3oh6129ppit08cal44].[none:major:nk]' show-apply='true' type-v2='filter' values='database' w='11429' x='88000' y='11200'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='5200' id='21' mode='checkdropdown' name='Heat Map' param='[federated.0t6gkkc19e3oh6129ppit08cal44].[none:pledge_class:nk]' show-apply='true' type-v2='filter' values='database' w='11429' x='88000' y='16400'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='2600' id='17' mode='compact' param='[Parameters].[Parameter 1]' show-title='false' type-v2='paramctrl' w='13333' x='917' y='49700' />
+        <zone h='2600' id='22' mode='compact' param='[Parameters].[Parameter 1 (copy)_1409274839764365313]' show-title='false' type-v2='paramctrl' w='11429' x='15429' y='49400' />
+        <zone h='4400' id='23' mode='compact' param='[Parameters].[Parameter 3]' type-v2='paramctrl' w='11429' x='76429' y='45800' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='850' minheight='850' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='14' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='13' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='49000' id='11' is-fixed='true' name='Heat Map' w='82400' x='800' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8125' id='15' name='Heat Map' pane-specification-id='0' param='[federated.0t6gkkc19e3oh6129ppit08cal44].[sum:Calculation_4369617538734202880:qk]' type-v2='color' w='16000' x='83200' y='74750'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{0C4D58C4-A42A-4E75-A0CA-6F5A6C345EF6}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Heat Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Parameter 1 (copy)_1409274839764365313]' type='parameter' />
+            <card pane-specification-id='0' param='[federated.0t6gkkc19e3oh6129ppit08cal44].[usr:Calculation_2782309777002799105:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{08F67DD9-DC9C-49E6-AE9C-B173CDCA2590}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Linear Regression'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{B3EF80D1-EDD2-42E9-AD25-36A89D293306}' />
+    </window>
+    <window class='worksheet' name='Details'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{91A698A6-499A-4FEE-9EC3-BF394D1901CB}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Heat Map'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='Linear Regression'>
+          <zoom type='fit-width' />
+        </viewpoint>
+      </viewpoints>
+      <active id='16' />
+      <simple-id uuid='{E3F29340-6102-42D8-8FB3-740460BBA1BF}' />
+    </window>
+  </windows>
+</workbook>

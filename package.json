@@ -1,0 +1,13 @@
+{
+    "name": "dummy-local-api-csv",
+    "version": "1.0.0",
+    "description": "A dummy API using json-server that reads from CSV files",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "json-server": "0.17.4",
+      "csv-parser": "^3.0.0"
+    }
+  }
